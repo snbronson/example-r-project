@@ -1,4 +1,4 @@
-##Define Global Parameters
+# DEFINE GLOBAL PARAMETERS ####################################################
 
 #run this to set your dropbox path in your .Renviron
 #usethis::edit_r_environ('project')

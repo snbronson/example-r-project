@@ -22,6 +22,8 @@ source("src/utils.R")
 
 #let's work with the parquet version
 data1 <- read_parquet(glue("{data_path}/example-data1.parquet"))
+# if we want to work with the Stata version, uncomment below
+#data1 <- read_dta(glue("{data_path}/example-data1.dta"))
 
 #note: if you choose to collect your raw data in SAS or Stata
 # these could easily be read in using haven::read_dta() or haven::read_sas()

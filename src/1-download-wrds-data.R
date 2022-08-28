@@ -10,8 +10,6 @@ library(haven)
 library(tictoc) #very optional, mostly as a teaching example
 library(tidyverse) # I like to load tidyverse last to avoid package conflicts
 
-
-
 #load helper scripts
 source("src/-Global-Parameters.R")
 source("src/utils.R")
@@ -58,7 +56,7 @@ raw_funda <-
   comp.funda |> 
   #Apply standard Compustat filters
   filter(indfmt=='INDL', datafmt=='STD', popsrc=='D' ,consol=='C') %>%
-  #Select the variables we want to dowload
+  #Select the variables we want to download
   select(gvkey, datadate, conm, fyear, fyr, cstat_cusip=cusip, #inline renaming
          cik, cstat_ticker= tic, sich, ib, ibc, spi, at, dvc, act, che, 
          lct, dlc, txp, xrd, dp, ceq, sale,csho, prcc_f, ajex, ni,
@@ -98,7 +96,7 @@ raw_funda <-
   # below line downloads to local machine RAM
   collect()
   #if you comment out the above collect() and instead run below command
-  # you can see the behind the scenes sql
+  #you can see the behind the scenes SQL that dbplyr is writing
   #show_query()
 
 #stop the tictoc timer
